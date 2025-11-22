@@ -104,51 +104,86 @@
             <h2 class="text-3xl font-bold text-green-400 mb-8 text-center">
                 <i class="fas fa-plug"></i> Conexiones del Componente
             </h2>
+            
+            <div class="bg-slate-800 p-6 rounded-xl shadow-lg border border-slate-600 mb-8">
+                 <h4 class="text-xl font-bold mb-6 text-center text-white"><i class="fas fa-project-diagram"></i> Diagrama de Cableado</h4>
+                 
+                 <div class="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16">
+                    <div class="bg-blue-900 p-4 rounded-lg border-2 border-blue-500 w-48 text-center shadow-lg shadow-blue-500/20">
+                        <h5 class="text-white font-bold mb-4">ARDUINO UNO</h5>
+                        <div class="space-y-3 text-sm font-mono">
+                            <div class="bg-black text-gray-300 p-1 rounded">GND</div>
+                            <div class="bg-black text-red-300 p-1 rounded">5V</div>
+                            <div class="bg-black text-yellow-300 p-1 rounded">A0</div>
+                            <div class="bg-black text-blue-300 p-1 rounded">A1</div>
+                            <div class="bg-black text-purple-300 p-1 rounded">D2</div>
+                        </div>
+                    </div>
+
+                    <div class="hidden md:flex flex-col space-y-6 w-32">
+                         <div class="wire bg-gray-500 w-full"></div> <div class="wire bg-red-500 w-full"></div>  <div class="wire bg-yellow-500 w-full"></div> <div class="wire bg-blue-500 w-full"></div>   <div class="wire bg-purple-500 w-full"></div> </div>
+
+                    <div class="bg-gray-900 p-4 rounded-lg border-2 border-gray-500 w-48 text-center shadow-lg">
+                        <h5 class="text-white font-bold mb-4">MÓDULO JOYSTICK</h5>
+                        <div class="space-y-3 text-sm font-mono">
+                            <div class="bg-black text-gray-300 p-1 rounded">GND</div>
+                            <div class="bg-black text-red-300 p-1 rounded">+5V / VCC</div>
+                            <div class="bg-black text-yellow-300 p-1 rounded">VRx</div>
+                            <div class="bg-black text-blue-300 p-1 rounded">VRy</div>
+                            <div class="bg-black text-purple-300 p-1 rounded">SW</div>
+                        </div>
+                    </div>
+                 </div>
+                 <p class="text-center text-slate-400 mt-6 text-sm"><em>*El pin SW (Botón) es opcional para el primer ejercicio.</em></p>
+            </div>
+
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                 <div class="bg-slate-800 p-6 rounded-xl shadow-lg border border-slate-600">
-                    <h4 class="text-xl font-bold mb-4 text-center text-white">Diagrama de Pines (Pinout)</h4>
+                    <h4 class="text-xl font-bold mb-4 text-center text-white">Tabla de Referencia Rápida</h4>
                     <table class="w-full text-left border-collapse">
                         <thead>
                             <tr class="text-slate-400 border-b border-slate-600">
                                 <th class="py-2">Pin Joystick</th>
                                 <th class="py-2">Conexión Arduino</th>
-                                <th class="py-2">Función</th>
+                                <th class="py-2">Color Sugerido</th>
                             </tr>
                         </thead>
                         <tbody class="text-sm">
                             <tr class="border-b border-slate-700">
                                 <td class="py-3 font-mono text-gray-300">GND</td>
                                 <td class="py-3 font-mono text-gray-300">GND</td>
-                                <td class="py-3 text-gray-400">Tierra (Negativo)</td>
+                                <td class="py-3 text-gray-500">Negro / Café</td>
                             </tr>
                             <tr class="border-b border-slate-700">
                                 <td class="py-3 font-mono text-red-400">+5V</td>
                                 <td class="py-3 font-mono text-red-400">5V</td>
-                                <td class="py-3 text-gray-400">Energía (Positivo)</td>
+                                <td class="py-3 text-red-500">Rojo</td>
                             </tr>
                             <tr class="border-b border-slate-700">
                                 <td class="py-3 font-mono text-yellow-400">VRx</td>
                                 <td class="py-3 font-mono text-yellow-400">A0</td>
-                                <td class="py-3 text-gray-400">Lectura Eje Horizontal</td>
+                                <td class="py-3 text-yellow-500">Amarillo / Blanco</td>
                             </tr>
                             <tr class="border-b border-slate-700">
                                 <td class="py-3 font-mono text-blue-400">VRy</td>
                                 <td class="py-3 font-mono text-blue-400">A1</td>
-                                <td class="py-3 text-gray-400">Lectura Eje Vertical</td>
+                                <td class="py-3 text-blue-500">Azul / Verde</td>
                             </tr>
                             <tr>
                                 <td class="py-3 font-mono text-purple-400">SW</td>
                                 <td class="py-3 font-mono text-purple-400">D2</td>
-                                <td class="py-3 text-gray-400">Botón (Pulsador)</td>
+                                <td class="py-3 text-purple-500">Morado / Naranja</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
                 
                 <div class="space-y-4">
-                    <div class="bg-blue-900/20 p-4 rounded-lg border-l-4 border-blue-500">
-                        <h5 class="font-bold text-blue-400">Importante</h5>
-                        <p class="text-sm text-slate-300">VRx y VRy DEBEN ir a pines que comiencen con <strong>"A"</strong> (Analógicos). Si los conectas a los digitales, no funcionará la graduación.</p>
+                    <div class="rounded-lg overflow-hidden border border-slate-600 shadow-lg relative group">
+                        <img src="https://placehold.co/600x400/1e293b/white?text=Diagrama+Real+Conexiones" alt="Diagrama de conexión Joystick" class="w-full opacity-80 group-hover:opacity-100 transition">
+                        <div class="absolute bottom-0 left-0 right-0 bg-black/70 text-white text-xs p-2 text-center">
+                            Vista del Circuito en Protoboard
+                        </div>
                     </div>
                     <div class="bg-yellow-900/20 p-4 rounded-lg border-l-4 border-yellow-500">
                         <h5 class="font-bold text-yellow-400">Tip Pro</h5>
@@ -196,7 +231,7 @@
             </div>
             
             <p class="text-lg text-slate-300 mb-6">
-                <strong>Objetivo:</strong> Conectar el joystick y ver los valores en el "Monitor Serie" para entender qué números arroja.
+                <strong>Objetivo:</strong> Conectar el joystick (según el diagrama de arriba) y ver los valores en el "Monitor Serie".
             </p>
 
             <div class="code-block p-4 rounded-lg overflow-x-auto relative group">
@@ -209,7 +244,7 @@ void setup() {
 void loop() {
   int valorX = analogRead(A0); // Leemos eje X
   int valorY = analogRead(A1); // Leemos eje Y
-  int boton = digitalRead(2);  // Leemos botón (recuerda activar resistencia pullup si es necesario)
+  int boton = digitalRead(2);  // Leemos botón
 
   Serial.print("Eje X: ");
   Serial.print(valorX);
@@ -235,20 +270,43 @@ void loop() {
                     <span class="bg-red-600 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide animate-pulse">Solo Alumnos</span>
                 </div>
 
-                <p class="text-lg text-slate-300 mb-6">
-                    Imagina que estás controlando la cámara de un Dron.
-                    <br><br>
-                    <strong>Tu misión:</strong> Conecta <strong>1 LED</strong> (con su resistencia) al Pin 3 (PWM).
-                    Haz que la intensidad del brillo del LED cambie según muevas el Joystick hacia adelante o atrás (Eje Y).
-                </p>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <p class="text-lg text-slate-300 mb-4">
+                            Imagina que estás controlando la cámara de un Dron.
+                            <br><br>
+                            <strong>Tu misión:</strong> Conecta <strong>1 LED</strong> al Pin 3 (PWM). Haz que la intensidad del brillo cambie según muevas el Joystick (Eje Y).
+                        </p>
+                        <ul class="list-disc list-inside text-slate-400 mb-8 space-y-2">
+                            <li>Palanca abajo (0) -> LED Apagado.</li>
+                            <li>Palanca arriba (1023) -> LED Brillo Máximo.</li>
+                            <li><strong>Pista:</strong> Usa <code>map()</code> para pasar de 0-1023 a 0-255.</li>
+                        </ul>
+                    </div>
 
-                <ul class="list-disc list-inside text-slate-400 mb-8 space-y-2">
-                    <li>Palanca abajo (0) -> LED Apagado.</li>
-                    <li>Palanca arriba (1023) -> LED Brillo Máximo.</li>
-                    <li><strong>Pista:</strong> <code>analogWrite</code> solo acepta valores de 0 a 255. ¡Necesitarás usar <code>map()</code>!</li>
-                </ul>
+                    <div class="bg-black/40 p-4 rounded-xl border border-red-400/30">
+                        <h4 class="text-orange-400 font-bold mb-3 text-sm uppercase"><i class="fas fa-bolt"></i> Hardware para el Reto</h4>
+                        <div class="flex items-center justify-between text-sm mb-2">
+                            <span class="text-white">Pata Larga LED (+)</span>
+                            <i class="fas fa-long-arrow-alt-right text-gray-500"></i>
+                            <span class="text-yellow-400">Resistencia 220Ω</span>
+                            <i class="fas fa-long-arrow-alt-right text-gray-500"></i>
+                            <span class="bg-red-900 text-white px-2 rounded font-mono">PIN 3</span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-white">Pata Corta LED (-)</span>
+                            <i class="fas fa-long-arrow-alt-right text-gray-500"></i>
+                            <span class="text-gray-400">Directo</span>
+                            <i class="fas fa-long-arrow-alt-right text-gray-500"></i>
+                            <span class="bg-gray-700 text-white px-2 rounded font-mono">GND</span>
+                        </div>
+                        <div class="mt-4 text-center">
+                             <img src="https://placehold.co/400x150/300000/red?text=Diagrama+LED+PWM" alt="Diagrama LED" class="rounded opacity-80 border border-red-900 w-full">
+                        </div>
+                    </div>
+                </div>
 
-                <div class="text-center">
+                <div class="text-center mt-6">
                     <button onclick="toggleSolution()" class="bg-slate-700 hover:bg-slate-600 text-slate-300 font-bold py-2 px-6 rounded border border-slate-500 transition flex items-center justify-center mx-auto gap-2">
                         <i class="fas fa-eye"></i> Ver Solución del Reto
                     </button>

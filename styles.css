@@ -33,7 +33,34 @@ h1, h2, h3 {
 .spoiler-open {
     max-height: 1000px; /* Altura suficiente */
 }
-/* Animación suave para scroll */
+/* Estilos para simulación de cables */
+.wire {
+    height: 4px;
+    border-radius: 2px;
+    position: relative;
+}
+.wire::after {
+    content: '';
+    position: absolute;
+    right: -4px;
+    top: -3px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: inherit;
+    border: 2px solid white;
+}
+.wire::before {
+    content: '';
+    position: absolute;
+    left: -4px;
+    top: -3px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: inherit;
+    border: 2px solid white;
+}
 html {
     scroll-behavior: smooth;
 }
